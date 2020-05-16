@@ -1,0 +1,1 @@
+echo "☀ $(xbacklight | awk -F '.' '{print $1}')%"

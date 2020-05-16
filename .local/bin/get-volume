@@ -1,0 +1,2 @@
+#!/bin/zsh
+echo "🔊 $(pactl list sinks | grep Volume:\ front-left | awk -F '/' '{print $4}' | tr -d "[:blank:]")"

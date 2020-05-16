@@ -1,0 +1,9 @@
+#!/bin/zsh
+CHOICE=$(echo -e "Logout\nShutdown\nReboot" | dmenu -i -l 3 -p "Quit")
+
+case $CHOICE in
+	Logout) sudo killall xinit; logout ;;
+	Shutdown) sudo shutdown now ;;
+	Reboot) sudo reboot ;;
+	*) ;;
+esac

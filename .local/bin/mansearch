@@ -1,0 +1,1 @@
+find /usr/share/man/man1 -type f | awk -F '/' '{print $6}' | sed 's/.gz//g' | dmenu | xargs man

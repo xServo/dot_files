@@ -1,0 +1,1 @@
+curl -s https://corona-stats.online/US | grep USA | awk '{print "😷 " $7" 💀 " $12}' | sed -r "s/[[:cntrl:]]\[[0-9]{1,3}m//g"

@@ -1,0 +1,2 @@
+#!/bin/zsh
+echo "🔋 $(acpi | awk -F ',' '{print $2}' | tr -s ' ' | awk '{f1+=$1;f2+=$2} END{print f1/2}' | awk -F '.' '{print $1}')%"

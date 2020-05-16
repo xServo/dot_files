@@ -1,0 +1,11 @@
+#!/bin/zsh
+seperator="|"
+while true; do
+	bar="$(multibat) $seperator 
+	$(get-volume) $seperator 
+	$(get-brightness) $seperator 
+	$(date '+%Y-%m-%d %H:%M %p')"
+	xsetroot -name "$bar"
+	sleep 1m
+done
+
