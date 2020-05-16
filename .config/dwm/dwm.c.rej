@@ -1,0 +1,11 @@
+--- dwm.c
++++ dwm.c
+@@ -233,6 +233,8 @@ static int xerror(Display *dpy, XErrorEvent *ee);
+ static int xerrordummy(Display *dpy, XErrorEvent *ee);
+ static int xerrorstart(Display *dpy, XErrorEvent *ee);
+ static void zoom(const Arg *arg);
++static void bstack(Monitor *m);
++static void bstackhoriz(Monitor *m);
+ 
+ /* variables */
+ static const char broken[] = "broken";
