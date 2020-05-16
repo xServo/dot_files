@@ -192,8 +192,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_space,	zoom,		{0} },
 	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
 
-	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 15; killbar") },
-	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 15; killbar") },
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 10; killbar") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 10; killbar") },
 	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		{.v = downvol } },
 	{ 0, XF86XK_AudioMute, 		spawn, 		{.v = mutevol } },
 	{ 0, XF86XK_AudioRaiseVolume, 	spawn, 		{.v = upvol   } },
