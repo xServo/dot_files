@@ -38,6 +38,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ NULL,      "feh",       NULL,       1 << 8,       1,           -1 },
 };
 
 /* layout(s) */
@@ -88,6 +89,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
+	{ MODKEY,			XK_w,	   spawn,	   SHCMD("$BROWSER") },
 	{ MODKEY,			XK_grave,  spawn,	   SHCMD("dmenuunicode") },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
