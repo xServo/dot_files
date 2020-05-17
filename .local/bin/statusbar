@@ -4,9 +4,8 @@ while true; do
 bar="$(multibat) $seperator 
 $(get-volume) $seperator 
 $(get-brightness) $seperator 
-$(date '+%Y-%m-%d %H:%M %p')"
+$(date '+%B-%d-%Y %I:%M %p')"
 bar=${bar//$'\n'/}
 xsetroot -name "$bar"
 sleep 1m
 done
-
