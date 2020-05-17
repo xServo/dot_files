@@ -1,4 +1,10 @@
 # Luke's config for the Zoomer Shell
+# Default
+export BROWSER="firefox"
+export TERMINAL="st"
+export EDITOR="nvim"
+export READER="zathura"
+
 PATH=~/.local/bin:$PATH
 # Enable colors and change prompt:
 autoload -U colors && colors

@@ -1,1 +1,13 @@
 set previewer ~/.go/bin/pistol
+
+# use enter for shell commands
+map <enter> shell
+
+# opener command that opens when a file is not a dir
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        image/*) feh $fx;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}

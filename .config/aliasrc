@@ -1,6 +1,7 @@
 #!/bin/sh
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim="nvim"
-alias rd="cd ~/.config/dwm/"
-alias rs="cd ~/.local/bin"
+alias rd="cd ~/.config/dwm/; ls"
+alias rs="cd ~/.local/bin; ls"
+alias rp="cd ~/Pictures; lfcd"
 alias p="sudo pacman"
