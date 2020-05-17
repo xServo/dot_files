@@ -1,11 +1,6 @@
 # Luke's config for the Zoomer Shell
 # Default
-export BROWSER="firefox"
-export TERMINAL="st"
-export EDITOR="nvim"
-export READER="zathura"
 
-PATH=~/.local/bin:$PATH
 # Enable colors and change prompt:
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[blue]%}%n%{$fg[red]%}@%{$fg[blue]%}%M %{$fg[green]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
@@ -42,6 +37,7 @@ bindkey '^e' edit-command-line
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+[ -f "$HOME/.config/zprofile" ] && source "$HOME/.config/zprofile"
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
