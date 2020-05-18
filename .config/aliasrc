@@ -6,3 +6,5 @@ alias rs="cd ~/.local/bin; ls"
 alias rp="cd ~/Pictures; lfcd"
 alias p="sudo pacman"
 alias ls='ls --color=auto'
+alias cp="cp -iv"
+alias mv="mv -iv"
