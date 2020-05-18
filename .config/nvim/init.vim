@@ -2,8 +2,15 @@
 source /usr/share/nvim/archlinux.vim
 set nu
 set relativenumber
-hi StatusLine ctermbg=black ctermfg=green
-set clipboard+=unnamedplus
+set clipboard+=unnamedplus " yanking etc goes to clipboard
+
+" sets up plugged if not installed
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
 
 " PLUGINS using plugged
 call plug#begin('~/.config/nvim/plugged')
