@@ -7,7 +7,12 @@ map <enter> shell
 cmd open ${{
     case $(file --mime-type $f -b) in
         text/*) $EDITOR $fx;;
-        image/*) feh $fx;;
+        image/*)  feh --scale-down --auto-zoom $fx;;
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
+cmd setwallpaper ${{
+	set -f
+	setbg $f
+}}
+map bg setwallpaper
