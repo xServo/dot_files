@@ -22,8 +22,9 @@ All my dotfiles which can be installed on a fresh arch install
 + vanitygaps
 
 ### Neo Vim
-+ Airline status bar + themes
++ Airline status bar + theme
 + CSS color (Colors hex code in editor)
++ Auto closer
 
 ### Extras
 + Terminal: ST (Luke Smith build)
