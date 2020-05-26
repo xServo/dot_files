@@ -1,0 +1,10 @@
+--- dwm.c	2019-06-06 21:23:27.023328450 +0200
++++ dwm.c	2019-06-20 15:07:01.089767947 +0200
+@@ -213,6 +213,7 @@ static void tagmon(const Arg *arg);
+ static void tile(Monitor *);
+ static void togglebar(const Arg *arg);
+ static void togglefloating(const Arg *arg);
++static void togglescratch(const Arg *arg);
+ static void toggletag(const Arg *arg);
+ static void toggleview(const Arg *arg);
+ static void unfocus(Client *c, int setfocus);
