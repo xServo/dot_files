@@ -1,2 +1,2 @@
-#!/bin/zsh
-echo "🔊 $(pactl list sinks | grep Volume:\ front-left | awk -F '/' '{print $4}' | tr -d "[:blank:]")"
+#!/bin/sh
+echo " 🔊 $(amixer get Master | grep Left: | awk '{print $5}' | sed 's/\[//g; s/\]//g')"
