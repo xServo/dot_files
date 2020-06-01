@@ -1,0 +1,3 @@
+#!/bin/sh
+cat vocab.md | grep - | sed 's/ //g' | awk -F '-' '{print $1}' | sed 's/ //g; /^$/d' > words
+cat vocab.md | grep - | sed 's/ //g' | awk -F '-' '{print $2}' | sed 's/ //g; /^$/d' > definition

@@ -1,0 +1,8 @@
+#!/bin/sh
+cat $1 | sed 's/$/\n/' > new.md
+filename="$(echo $1 | cut -f 1 -d '.')"
+pandoc new.md -o $filename.pdf
+rm new.md
+zathura $filename.pdf &
+
+sleep 5; rm $filename.pdf # comment this line to keep pdf
