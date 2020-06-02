@@ -32,4 +32,4 @@ hi StatusLine ctermbg=green ctermfg=black
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-autocmd FileType markdown nnoremap <C-p> ! pdf % <enter>
+autocmd FileType markdown nnoremap <silent> <C-p> :!pdf % & <enter>
