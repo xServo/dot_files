@@ -5,4 +5,4 @@ pandoc new.md -o $filename.pdf
 rm new.md
 zathura $filename.pdf &
 
-sleep 5; rm $filename.pdf # comment this line to keep pdf
+sleep 0.5; rm $filename.pdf # comment this line to keep pdf

@@ -2,8 +2,9 @@
 source /usr/share/nvim/archlinux.vim
 set nu relativenumber
 set smartcase
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=8 softtabstop=4 expandtab shiftwidth=4 smarttab
 set clipboard=unnamedplus
+set nohlsearch
 
 " Plugged
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
@@ -31,3 +32,4 @@ hi StatusLine ctermbg=green ctermfg=black
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+autocmd FileType markdown nnoremap <C-p> ! pdf % <enter>
