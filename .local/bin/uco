@@ -1,0 +1,6 @@
+#!/bin/sh
+while true
+do
+    echo " 📈 $(ticker.sh uco | awk '{print $1, $3, $4}' | sed -r 's/\x1b\[[^\x1b]*m//g')" > ~/.cache/ucoprice
+    sleep 10m
+done
