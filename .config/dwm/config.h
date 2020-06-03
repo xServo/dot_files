@@ -129,7 +129,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	{ MODKEY,			XK_BackSpace,	quit,	   {0} },
-	{ MODKEY|ShiftMask, XK_equal, 	spawn,			   SHCMD("mpc toggle") },
+	{ MODKEY|ShiftMask, XK_equal, 	spawn,			   SHCMD("mpc toggle; killbar") },
 	{ MODKEY, XK_minus, 	spawn,			   SHCMD("vol_down") },
 	{ MODKEY, XK_equal, 	spawn,			   SHCMD("vol_up") },
 	{ 0, XF86XK_AudioMute, 	spawn,			   SHCMD("vol_mute") },

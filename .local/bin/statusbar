@@ -1,10 +1,12 @@
 #!/bin/zsh
 seperator="|"
 while true; do
-bar="$(multibat) $seperator 
+bar="
+$(music $seperator) 
+$(cat ~/.cache/weather) $seperator
+$(cat ~/.cache/ucoprice) $seperator
 $(get-volume) $seperator 
-$(get-brightness) $seperator 
-$(date '+%B-%d-%Y %I:%M %p')"
+$(echo 📅 $(date '+%B-%d-%Y %I:%M %p'))"
 bar=${bar//$'\n'/}
 xsetroot -name "$bar"
 sleep 1m

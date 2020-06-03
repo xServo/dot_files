@@ -1,0 +1,7 @@
+#!/bin/sh
+playing=$(mpc status | awk 'FNR == 2 {print $1}')
+if [ $playing == "[playing]" ]; then
+    echo  $(mpc status | head -1) $1
+else
+    echo b > /dev/null;
+fi
