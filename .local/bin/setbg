@@ -1,5 +1,3 @@
-#!/bin/zsh
-file=$1
-rm ~/Pictures/wallpaper.png
+#!/bin/sh
 cp $1 ~/Pictures/wallpaper.png
 xwallpaper --zoom ~/Pictures/wallpaper.png
