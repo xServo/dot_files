@@ -1,0 +1,44 @@
+ncmpcpp_directory = ~/.config/ncmpcpp
+
+lyrics_directory = ~/.config/ncmpcpp/.lyrics
+
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = /home/ryan/Music
+mpd_crossfade_time = 8
+
+audio_output {
+       type            "fifo"
+       name            "Visualizer feed"
+       path            "/tmp/mpd.fifo"
+       format          "44100:16:2"
+}
+
+
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualizer feed"
+visualizer_sync_interval = "30" 
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "+|"
+
+## Player
+#autocenter_mode =                       "yes"
+#centered_cursor =                       "yes"
+#header_visibility =                     "no"
+#statusbar_visibility =                  "yes"
+#titles_visibility =                     "yes"
+#playlist_disable_highlight_delay =      "0"
+#state_line_color =                      "magenta"
+#
+## Progressbar
+#progressbar_color =                     "black"
+#progressbar_elapsed_color =             "red"
+#progressbar_look =                      "━━╸"
+#
+## Visualizer
+#visualizer_type =                       "spectrum"
+#visualizer_color =                      "green, cyan, magenta, white"
+#visualizer_in_stereo =                  "yes"
+#visualizer_output_name =                "My Pulse Output"
+#visualizer_fifo_path =                  "/tmp/mpd.fifo"
