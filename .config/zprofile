@@ -1,13 +1,15 @@
 #!/bin/zsh
 
 # enviormental vars
-export BROWSER="firefox"
+export BROWSER="brave"
 export TERMINAL="st"
 export EDITOR="nvim"
 export READER="zathura"
 
 # path
-PATH=~/.local/bin:$PATH
+#PATH=~/.local/bin:$PATH
+PATH=~/.local/share/exercism.d:$PATH
+PATH=$PATH$( find $HOME/.local/bin/ -type d -printf ":%p" )
 
 # nvm
 alias lnvm='export NVM_DIR="$HOME/.config/nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
