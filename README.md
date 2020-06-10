@@ -10,6 +10,7 @@ All my dotfiles which can be installed on a fresh arch install
 # Features 
 
 ### DWM
+https://github.com/xServo/dwm
 + Patches:
 + actualfullscreen
 + bottomstack
