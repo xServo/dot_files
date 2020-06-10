@@ -1,22 +1,82 @@
 #!/bin/sh
 set -e
+min=0
+
 case $1 in
+    # usage
+    "")
+    printf "Usage [OPTION] <Starting Point> OR time\n -s\n\tstopwatch (counts up)\n\nOr simply put a number of seconds or minutes\nExample:\n\t\$ timer 5m\n\t\$ timer -s\n\t\$ timer -s 5m\n"
+        exit
+        ;;
+    # stopwatch
     -s*)
-        time=1
+        time=$2
+        case $2 in 
+            "")
+                time=0
+                ;;
+        esac
+
+        case $time in
+            *"m"*)
+                time=$(echo $time | sed 's/m//g')
+                time=$(( $time * 60 ))
+                min=$(expr $time / 60 | sed -e 's/[0-9]*\.[0-9]*//g' -e 's/ *$//')
+                x=$(( $min * 60 ))
+                time=$(( $time - x ))
+                ;;
+        esac 
         while [ 1 ]
         do 
             clear
-            toilet -F border -F rainbow $time 2>/dev/null
+            case $time in
+                60*)
+                    time=$(( $time - 60 ))
+                    min=$(( $min + 1 ))
+                    ;;
+                [0-9])
+                    toilet -F border -F rainbow $min:0$time 2>/dev/null
+                    ;;
+                *)
+                    toilet -F border -F rainbow $min:$time 2>/dev/null
+                    ;;
+            esac
             sleep 1
             time=$(( $time + 1 ))
         done
         ;;
+    # timer
+    *)
+        time=$1
+        case $time in
+            *"m"*)
+                time=$(echo $time | sed 's/m//g')
+                time=$(( $time * 60 ))
+                ;;
+        esac 
+        while [ 1 ]
+        do
+            clear
+            if [ $time > 60 ]; then
+                min=$(expr $time / 60 | sed -e 's/[0-9]*\.[0-9]*//g' -e 's/ *$//')
+                x=$(( $min * 60 ))
+                sec=$(( $time - x ))
+            fi
+            case $sec in
+                *"-"*)
+                    toilet -F border -F rainbow 0:00 2>/dev/null
+                    sleep 1d
+                    ;;
+                [0-9])
+                    toilet -F border -F rainbow $min:0$sec 2>/dev/null
+                    ;;
+                *)
+                    toilet -F border -F rainbow $min:$sec 2>/dev/null
+                    ;;
+            esac
+            sleep 1
+            time=$(( $time - 1 ))
+        done
+        ;;
 esac
-time=$1
-while [ 1 ]
-do
-    clear
-    toilet -F border -F rainbow $time 2>/dev/null
-    sleep 1
-    time=$(( $time - 1 ))
-done
+
