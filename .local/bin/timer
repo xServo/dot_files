@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+case $1 in
+    -s*)
+        time=1
+        while [ 1 ]
+        do 
+            clear
+            toilet -F border -F rainbow $time 2>/dev/null
+            sleep 1
+            time=$(( $time + 1 ))
+        done
+        ;;
+esac
+time=$1
+while [ 1 ]
+do
+    clear
+    toilet -F border -F rainbow $time 2>/dev/null
+    sleep 1
+    time=$(( $time - 1 ))
+done
