@@ -1,0 +1,5 @@
+#!/bin/sh
+rm ~/.xresources
+cp $1 ~/.xresources
+xrdb ~/.xresources
+dwmcolor

@@ -1,0 +1,9 @@
+#!/bin/sh
+col=$(grep color4 ~/.xresources | awk '{print $2}')
+#grep -l "selbgcolor\[\]" ~/.config/dwm/config.h | xargs sed "s/\#....../$(echo $col)/"
+#sed "/sel\*\+color\[\]/ s/\#....../$(echo $col)/" ~/.config/dwm/config.h
+#awk '/selbgcolor\[\]/' ~/.config/dwm/config.h 
+sed -i "/selbgcolor\[\]/ s/\#....../$(echo $col)/" ~/.config/dwm/config.h
+sed -i "/selbordercolor\[\]/ s/\#....../$(echo $col)/" ~/.config/dwm/config.h
+cd ~/.config/dwm/
+sudo make install
