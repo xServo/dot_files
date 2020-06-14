@@ -21,6 +21,7 @@ https://github.com/xServo/dwm
 + fibonacci
 + titlecolor
 + vanitygaps
++ statusallmons
 
 ### Neo Vim
 + Airline status bar + theme
