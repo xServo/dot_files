@@ -2,8 +2,8 @@
 CHOICE=$(echo -e "Logout\nShutdown\nReboot" | dmenu -i -l 3 -p "Quit")
 
 case $CHOICE in
-	Logout) sudo killall xinit; logout ;;
-	Shutdown) sudo shutdown now ;;
+	Logout) sudo killall xinit ;;
+	Shutdown) sudo shutdown -P now ;;
 	Reboot) sudo reboot ;;
 	*) ;;
 esac
