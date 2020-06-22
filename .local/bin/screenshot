@@ -5,6 +5,5 @@ case $1 in
         exit
         ;;
 esac
-res=$(xrandr | grep \* | awk '{print $1}')
-echo $res
+res=$(xrandr | grep \* | head -1 | awk '{print $1}')
 ffmpeg -f x11grab -video_size $res -i $DISPLAY -vframes 1 $1 2> /dev/null
